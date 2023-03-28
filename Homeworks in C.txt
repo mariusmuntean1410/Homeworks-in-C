@@ -1,0 +1,1105 @@
+1.Să se scrie un program pentru determinarea mediei aritmetice a trei numere neîntregi.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#include  <conio.h>
+
+float  cit_int(void);
+float  media_a(float,  float,  float);
+int  main()
+{
+        float  n1,  n2,n3,MA; 
+        n1  =  cit_int();
+        n2  =  cit_int();
+        n3  =  cit_int();
+        MA  =  media_a(n1,  n2,  n3);
+        printf("\n\t  Media  aritmetica  :  %f\n",  MA);
+        _getch();
+        return  0;
+}
+
+
+float  cit_int(void)
+{        
+        float  numar; 
+        printf("\nIntroduceti  un  numar  neintreg  :  ");
+        scanf("%f",  &numar);
+        return  numar;
+}
+float  media_a(float  n1,  float  n2,  float    n3)
+{
+        float  medie;
+        medie  =  (n1  +  n2  +  n3)  /  3.0;
+        return  medie;
+}
+
+2.Să se scrie un program pentru pentru determinarea mediei geometrice a două numere întregi.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#include  <math.h>
+
+int  cit_int();
+void  afis_int(int);
+double  medg(int,  int);
+void  afis_double(double  x);
+
+int  main()
+{
+        int  a,b; 
+        a=cit_int();
+        afis_int(a);
+        b  =  cit_int();
+        afis_int(b);
+        double  mg  =  medg(a,b);
+        afis_double(mg);
+
+        return  0;
+
+  }  //  gata  main 
+//functia  de  citire  intreg
+int  cit_int()  {
+        int  a;
+        printf("\nIntroduceti  o  val  intreaga:  ");
+        scanf("%d",  &a);    //  am  citit  o  val  intreaga  in  var  a 
+        return  a;
+}
+
+//functia  de  afisare  intreg 
+void  afis_int(int  x)
+{
+        printf("\nValoarea  citita  este  %d",  x);
+
+                }
+void  afis_double(double  x)
+{
+        printf("\nMedia  geometrica  este  %lf\n",  x);
+
+}
+double  medg(int  x,  int  y)
+{ 
+        double  m;
+        m=sqrt(x  *  y); 
+        return  m;
+}
+3.
+Să se scrie un program C/C++ care defineşte o variabilă întreagă care va fi iniţializată cu valori constante. Afişaţi rezultatul cu ajutorul supraîncărcării operatorului << şi a lui cout.
+
+#include<iostream>
+using  namespace  std;
+int  main()
+{
+        const  int  A=210;
+        
+        cout  <<"Valoarea  este:  "<<  A  <<  endl;
+        return  0;
+
+}
+4.Definiţi un şir de caractere care va fi afişat cu cout. Definiţi alte şiruri de caractere folosind secvenţe escape. Verificaţi utilizarea spaţiilor albe.
+
+#include  <iostream>
+using  namespace  std;
+
+int  main()
+{
+        char  s[50],s1[60],s2[70];
+        cout  <<  "Introduceti  primul  sir:  ";
+        cin.get(s,  49);
+        cout  <<  s  <<  endl;
+        cin.  get();
+        cout  <<  "Introduceti  al  doilea  sir  ";
+        cin.get(s1,  59);
+        cout  <<  s1  <<  endl;
+        cout  <<  "Sirul  de  caractere  este  aliniat  la  dreapta:";
+        cout  <<  "\t"  <<  s1  <<  endl;
+        cin.get();
+        cout  <<  "\nIntroduceti  al  treilea  sir  ";
+        cin.get(s2,  69);
+        cout  <<  s2  <<  endl;
+        cout  <<  "Sirul  de  caractere  se  va  afisa  pe  rand  nou:  ";
+        cout  <<  "\n"  <<  s2  <<  endl;
+        
+        
+
+}     
+
+5.Să se scrie un program în care se dau 3 numere întregi și se cere să se calculeze suma lor ponderată, ponderile fiind numere subunitare a căror suma este 1.
+
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#include  <conio.h>
+#include  <math.h>
+float  media_ponderata(int,  int,  int,  float  ,  float,  float  );
+int  cit_int(void);
+float  cit_int1(void);
+
+
+int  main()
+{
+        int  n1,  n2,  n3;
+        float  p1,  p2,  p3,  mp;
+        
+        n1  =  cit_int();
+        n2  =  cit_int();
+        n3  =  cit_int();
+        p1  =  cit_int1();
+        p2  =  cit_int1();
+        p3  =  cit_int1();
+        mp  =  media_ponderata(n1,n2,n3,p1,p2,p3);
+        if  (((p1  +  p2  +  p3)  ==  1)  &&  (p1  <  1,  p2  <  1,  p3  <  1))
+                printf("\nMedia  ponderata  este=%6.2f",  mp);
+        else  printf("\nSuma  ponderilor  trebuie  sa  fie  1  iar  ele  sa  fie  subunitare!!  ");
+
+
+        return  0;
+}
+int  cit_int(void)
+{
+        int  numar1;
+        
+        printf("Introduceti  un  numar  intreg:");
+        scanf("%d",  &numar1);
+        return  numar1;
+        
+}
+float  cit_int1(void)
+{
+        float  numar2;
+        printf("Introduceti  ponderea:");
+        scanf("%f",  &numar2);
+        return  numar2;
+}
+float  media_ponderata(int  n1,  int  n2,  int  n3,  float  p1,  float  p2,  float  p3)
+{
+        float  medie_p;
+        medie_p  =  (n1  *  p1  +  n2  *  p2  +  n3  *  p3)  /  (p1  +  p2  +  p3);
+        return  medie_p;
+}
+
+6. Definiți într-un program constante simbolice de tipuri diferite (întregi, reale, șiruri de caractere). Afișati valorile acestor constante utilizând operatorul << și fluxul cout.
+
+
+#include<iostream>
+using  namespace  std;
+int  main()
+{
+        char  C[500];
+        const  int  A  =  10;
+        const  double  B  =  34.321;
+         
+          cout  <<  "Afisati  sirul  de  caractere:  ";
+          cin.get(C,499);
+          cout  <<  C  <<  endl;
+          cout  <<  "Afisati  valoarea  intreaga:"  <<  A  <<  endl;
+          cout  <<  "Afisati  valoarea  reala:"  <<  B  <<  endl;
+          return  0;
+
+
+
+
+
+}
+
+7.Definiți 3 numere reale a, b, și c. Afișați rezultatul operației 1/a+1/b+1/c. Efectuati aceiasi operatie considerand ca si intrare numere intregi.
+
+laboratorul  4
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+  float  cit_int();
+  void  afis_float(float);
+  float  operatie(float,  float,  float);
+
+ 
+int  main()
+{
+        float  a,  b,  c,op;
+        a  =  cit_int();
+        b  =  cit_int();
+        c  =  cit_int();
+        op  =  operatie(a,  b,  c);
+        afis_float(op);
+        
+        return  0;
+}
+float  cit_int()
+{
+        float  numar;
+        printf("\nDati  numarul  real:");
+        scanf("%f",  &numar);
+        return  numar;
+}
+float  operatie(float  x,  float  y  ,  float  z)
+{
+        float  exercitiu;
+        exercitiu  =  1  /  x  +  1  /  y  +  1  /  z;
+        return  exercitiu; 
+
+}
+void  afis_float(float  x)
+{
+        printf("\nRezultatul  operatiei  este  %3.2f",  x);
+
+}
+
+8. Realizaţi o aplicaţie care citeşte de la intrarea standard două valori pentru variabilele R1 şi R2, reprezentând valoarea rezistenţelor R1 şi R2, iar apoi apelează funcţii ce calculează rezistenţa echivalentă grupării serie, 
+respectiv grupării paralel, după care afişează valorile returnate cu 3 zecimale şi aliniere la dreapta.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int  rez_echiv_S(int  a,  int  b);
+double  rez_echiv_P(int  a,  double  b);
+int  main()
+{
+        int    R1,  R2,  R_echiv_serie;
+        double  R_echiv_paralel;
+
+        printf("\nIntroduceti  valoarea  R1:  ");
+        scanf("%d",  &R1);
+        printf("\nIntroduceti  valoarea  R2:  ");
+        scanf("%d",  &R2);
+        R_echiv_serie  =  rez_echiv_S(R1,  R2);
+        R_echiv_paralel  =  rez_echiv_P(R1,  R2);
+        printf("\nRezistenta  echivalenta  serie:  %d\nRezistenta  echivalenta  paralel:  %2.3lf",  R_echiv_serie,  R_echiv_paralel);        
+}
+int  rez_echiv_S(int  a,  int  b)
+{
+        return  a  +  b;
+}
+double  rez_echiv_P(int  a,  double  b)
+{
+        return(a  *  b)  /  (a  +  b);
+}
+
+9. Scrieţi o aplicaţie care citeşte de la intrarea standard două valori pentru variabilele C1 şi C2, reprezentând valori de capacitati, iar apoi apelează funcţii ce calculează capacitatea echivalentă grupării serie, respectiv grupării paralel, 
+după care afişează valorile returnate cu 4 zecimale şi aliniere la stânga.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<conio.h>
+  float  cit_int(void);
+float  capacitate_serie(float  ,  float  );
+float  capacitate_paralel(float,  float);
+void  afis_float(float  x,float  y);
+
+int  main()
+{
+        float  C1,  C2,  C_echiv_serie,  C_echiv_paralel;
+        C1  =  cit_int();
+        C2  =  cit_int();
+        C_echiv_serie  =  capacitate_serie(C1,  C2);
+        C_echiv_paralel  =  capacitate_paralel(C1,  C2);
+          afis_float(C_echiv_serie,C_echiv_paralel);
+          return  0;
+
+}
+float  cit_int(void)
+{
+        float  valoare;
+        printf("\nIntroduceti  valoarea  capacitatii:  ");
+        scanf("%f",  &valoare);
+        return  valoare;
+}
+float  capacitate_serie(float  x,  float  y)
+{
+        float  capacitate;
+        capacitate  =  1  /  (1  /  x  +  1  /  y);
+        return  capacitate;
+}
+float  capacitate_paralel(float  x,  float  y)
+{
+        float  capacitate;
+        capacitate  =  x  +  y;
+        return  capacitate;
+}
+void  afis_float(float  x,float  y)
+{       
+        printf("\nAfisare  capacitate  echivalenta  serie:%-3.4f\nAfisare  capacitate  echivalenta  paralel:%-3.4f\n",x,y);
+
+
+
+}
+
+10. Citiţi de la tastatură două valori întregi care reprezintă catetele unui triunghi dreptunghic. Determinaţi ipotenuza şi perimetrul triunghiului. Afişaţi rezultatul pe linii diferite.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+double  ipotenuza(int,  int);
+double  perimetru(double,  int,  int);
+int  main()
+{
+        int  c1,  c2;
+        double  P,  ip;
+        printf("Dati  valoarea  primei  catete:");
+        scanf("%d",  &c1);
+        printf("Dati  valoarea  celei  de  a  doua  catete:");
+        scanf("%d",  &c2);
+        ip  =  ipotenuza(c1,  c2);
+        P  =  perimetru(ip,  c1,  c2);
+        printf("\nAfisati  ipotenuza  triunghiului:%3.2f\nAfisati  perimetrul  triunghiului:%3.2f",  ip,  P);
+
+
+}
+double  ipotenuza(int  x,  int  y)
+{
+        double  ipt;
+        ipt  =  sqrt(pow(x,  2)  +  pow(y,  2));
+        return  ipt;
+
+}
+double  perimetru(double  x,  int  y  ,  int  z)
+{
+        double  Perim;
+        Perim  =  x  +  y  +  z;
+        return  Perim;
+
+}
+
+11. Citiţi de la tastatură două valori întregi a şi b (a0), unde a şi b sunt coeficienţii ecuaţiei ax+b=0. Rezolvaţi ecuaţia şi afişaţi rezultatul.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<conio.h>
+float  ecuatia(int,  int);
+
+int  main()
+{
+        int  a  ,  b;
+        float  ec;
+        printf("Dati  valoarea  lui  a:");
+        scanf("%d",  &a);
+        printf("Dati  valoarea  lui  b:");
+        scanf("%d",  &b);
+        ec  =  ecuatia(a,  b);
+
+        if  (a  !=  0)
+                printf("Solutia  ecuatiei  este:%3.2f  ",  ec);
+        else
+                printf("\nImposibil");
+        return  0;
+}
+float  ecuatia(int  a,  int  b)
+{
+        float  x;
+        x  =  -b  /  a;
+        return  x;
+}
+
+12. Se citesc de la tastatură numele a 2 studenți și nota fiecăruia la programare.
+ Să se afișeze pe linii separate numele fiecărui student într-un câmp de afișare cu dimensiunea 20, aliniat la dreapta, respectiv la stânga și media notelor lor, cu o precizie de 2 zecimale.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<conio.h>
+float  medie(float,  float);
+int  main()
+{
+        char  nume1[100],  nume2[100];
+        float  nota1,  nota2,  media;
+        printf("\nDati  numele  primului  elev:");
+        scanf("%s",  &nume1);
+        printf("\nDati  numele  celui  de-al  doilea  elev:");
+        scanf("%s",  &nume2);
+        printf("\nDati  nota  primului  elev:");
+        scanf("%f",  &nota1);
+        printf("\nDati  nota  celui  de-al  doilea  elev:");
+        scanf("%f",  &nota2);
+        printf("\nPrimul  elev:%20.12s",nume1);
+        printf("\nAl  doilea  elev:%20.12s",nume2);
+        media  =  medie(nota1,  nota2);
+        printf("\nMedia  este:%-3.2f",  media);
+        return  0;
+}
+float  medie(float  x,  float  y)
+{
+        float  m;
+        m  =  (x  +  y)  /  2;
+        return  m;
+}
+
+13. Se citesc trei numere de la tastatură (a, b şi c). Să se determine aria dreptunghiului ale cărui laturi sunt a şi b şi verificaţi dacă diagonala dreptunghiului este egală cu c.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<math.h>
+float  Aria(int,  int);
+int  main()
+{
+        int  a,  b,  c;
+        float  aria_dr;
+        printf("Dati  lungimea  dreptunghiului:  ");
+        scanf("%d",  &a);
+        printf("Dati  latimea  dreptunghiului:  ");
+        scanf("%d",  &b);
+        printf("Dati  valoarea  pentru  diagonala:  ");
+        scanf("%d",  &c);
+        aria_dr  =  Aria(a,  b);
+        printf("Aria  dreptunghiului  este:%3.2f\n",  aria_dr);
+        if  (pow(c,  2)  ==  pow(a,  2)  +  pow(b,  2))
+
+                printf("Diagonala  dreptunghiului  este  egala  cu  c");
+        else
+                printf("Diagonala  dreptunghiului  nu  este  egala  cu  c");
+
+        return  0;
+
+
+}
+float  Aria(int  l,  int  L)
+{
+        float  arie;
+        arie  =  l  *  L;
+        return  arie;
+}
+
+14. Să se scrie un program care verifică dacă un număr citit de la tastatură este pătrat perfect.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<math.h>
+int  main()
+{
+        int  a;
+        printf("Introduceti  un  numar:  ");
+        scanf("%d",  &a);
+        if  ((int)sqrt(a)  ==  sqrt(a))
+                printf("Numarul  este  patrat  perfect.");
+        else
+                printf("Numarul  nu  este  patrat  pefect.");
+
+        return  0;
+}
+15. Să se scrie un program care calculeaza an, unde n este citit de la consolă (a se defineşte în program).
+
+#include  <iostream>
+using  namespace  std;
+void  main(void)
+{
+        int  a,  rezultat=1;
+        unsigned  int  n; 
+        cout  <<  "Introduceti  un  numar:  "<<endl;
+        cin  >>  a;
+        cout  <<  "Introduceti  alt  numar:  ";
+        cin  >>  n;
+        for  (int  i  =  0;  i  <  n;  i++)
+                rezultat  *=  a;
+        cout  <<  a  <<  "  la  puterea  "  <<  n  <<  "  este  egal  cu:  "  <<  rezultat  <<  endl;
+}
+16. Să se scrie un program care citeşte de la tastatură o valoare întreagă şi calculează n! (n-factorial).
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int  factorial(int  n);
+
+int  main()
+{
+        int  n;
+
+          printf("Introduceti  un  numar:  ");
+          scanf("%d",  &n);
+          n  =  factorial(n);
+          printf("Factorialul  lui  n  este:  %d",  n);
+
+        return  0;
+}
+
+int  factorial(int  n)
+{
+        if  (n  >  1)
+                return  n  *  factorial(n  -  1);
+        else
+                return  1;
+}
+
+17. Să se scrie un program care determină cel mai mare divizor comun a doi întregi.
+#include<iostream>
+  using  namespace  std;
+int  main()
+{
+        int  a,  b;
+        cout  <<  endl  <<  "\nIntroduceti  rimul  numar:  ";
+        cin  >>  a;
+        cout  <<  endl  <<  "\nIntroduceti  al  doilea  numar:  ";
+        cin  >>  b;
+        while  (a  !=  b)
+                if  (a  >  b)
+                        a  =  a-b;
+                else
+                        b  =  b-a;
+        cout  <<  endl  <<  endl  <<  "Cel  mai  mare  divizor  comun  este:  "  <<  a  <<  endl;
+}
+18. Să se scrie un program care determină toţi divizorii unui număr.
+
+#include  <iostream>
+using  namespace  std;
+void  main(void)
+{
+        unsigned  int  x;
+        cout  <<  "Introduceti  un  numar:  ";
+        cin  >>  x;
+        cout  <<  "Divizorii  lui  "  <<  x  <<  "  sunt:\n1";
+        for  (int  i  =  2;  i  <=  x;  i++)
+                if  (!(x  %  i))
+                        cout  <<  "  "  <<  i;
+        cout  <<  endl;
+}
+19. Calculaţi produsul a două numere întregi folosind numărul corespunzător de adunări.
+
+#include  <iostream>
+using  namespace  std;
+int  main()
+{
+        int  x,  y,  produs  =  0,  semn  =  1;
+        cout  <<  endl  <<  "Introduceti  primul  numar:  ";
+        cin  >>  x;
+        cout  <<  endl  <<  "Introduceti  al  doilea  numar:  ";
+        cin  >>  y;
+        if  (y  <  0)
+        {
+                y  =  -1;
+                semn  =  semn  *  y;
+        }
+        
+        for  (int  i  =  0;  i  <  y;  i++)
+                produs  =produs  +  x;
+        produs  =produs  *  semn;
+        
+        cout  <<  endl  <<  "Produsul  este:  "  <<  produs  <<  endl;
+}
+20. Să se scrie un program care determină câtul împărţirii a doi întregi folosind scăderi succesive.
+
+#include  <iostream>
+using  namespace  std;
+int  main()
+{
+        int  x,  y,  catul  =  0,  semn_x  =  1,  semn_y  =  1;
+        
+        cout  <<endl<<  "Introduceti  deimpartitul:  ";
+        cin  >>  x;
+        cout  <<endl<<  "  Introduceti  impartitorul:  ";
+        cin  >>  y;
+        if  (y  ==  0)
+        {
+                cout  <<  "Impartitorul  nu  poate  fi  0";
+                return  0;
+        }
+        if  (x  <  0)
+        {
+                x  =  x*-1;
+                semn_x  =  x;
+        }
+        if  (y  <  0)
+        {
+                y  =  y*-1;
+                semn_y  =  y;
+        }
+        while  (x  >=  y)
+        {
+                x  =x  -  y;
+                catul++;
+        }
+        catul=  catul*(  semn_x  *  semn_y);
+        cout  <<  "Catul  impartirii  este:  "  <<  catul  <<  endl;
+}
+21. Să se scrie un program care determină numărul de cifre care compun un număr întreg citit de la tastatură.
+
+#include  <iostream>
+using  namespace  std;
+int  main()
+{
+        int  x,  c  =  0;
+        cout  <<  "Introduceti  un  numar  intreg:  ";
+        cin  >>  x;
+        
+        while  (x  >  0)
+        {
+
+                x  =  x  /  10;
+                c++;
+        }
+        
+        cout  <<  "Numarul  datare  "  <<  c  <<  "  cifre."  <<  endl;
+}
+
+22.Să se scrie un program care determină cmmmc a două numere citite de la tastatură.
+
+#include  <iostream>
+using  namespace  std;
+int  main()
+
+{
+        int  a,  b,  x,  y;
+        cout  <<  "Introduceti  un  numar:  "  <<  endl;
+        cin  >>  a;
+        cout  <<  "Introduceti  alt  numar:  "  <<  endl;
+        cin  >>  b;
+       
+        x  =  a;
+        y  =  b;
+       
+        while  (x  !=  y)
+        {
+                if  (x  >  y)
+                        x  =  x  -  y;
+                else
+                        y  =  y  -  x;
+        }
+       
+        cout  <<  "Cel  mai  mic  multiplu  comun  este:  "  <<  (a  *  b)  /  x;
+}
+
+23. Scrieţi un program pentru determinarea valorii medii a elementelor pozitive/negative dintr-un tablou unidimensional.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#define  DIM  20
+float  ValMed(int  x[],  int  dim);
+int  main(void)
+{
+        int  i,  dim,  x[DIM]  ;
+        
+        printf("\nIntroduceti  dimensiunea  tabloului:  ");
+        scanf("%d",  &dim);
+        if  (dim  >  DIM)  {
+                printf("\n  Dimensiune  prea  mare  !");
+                return  1;
+        }
+        printf("\n  Introduceti  elementele  tabloului:\n");
+        for  (i  =  0;  i  <  dim;  i++)
+        {
+                printf("\tx[%d]  =  ",  i);
+                scanf("%d",  &x[i]);
+        }
+        if  (x[i]  >  0)
+        {
+                printf("\n  Valoarea  medie  a  numerelor  pozitive  este:  %.3f\n",  ValMed(x,  dim));
+        }
+        else  if(x[i]<0)
+                printf("\n  Valoarea  medie  a  numerelor  negative  este:  %.3f\n",  ValMed(x,  dim));
+        return  0;
+}
+
+float  ValMed(int  x[],  int  n)
+{
+        int  i;
+        float  sum  =  0.0f;
+        for  (i  =  0;  i  <  n;  i++)
+                sum  +=  x[i];
+        return  sum  /  n;
+}
+24. Scrieţi un program pentru determinarea celui mai mic element pozitiv dintr-un tablou unidimensional.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#define  DIM  20
+int  main(void)
+{
+        int  i,  n,  x[DIM],min;
+        printf("\nDati  dimensiunea  tabloului:");
+        scanf("%d",  &n);
+        if  (n  >  DIM)
+        {
+                printf("\nDimensiunea  este  invalida!\n");
+        }
+        printf("\tDati  elementele  tabloului:\n");
+        for  (i  =  0;  i  <  n;  i++)
+        {
+                printf("\tx[%d]=  ",  i);
+                scanf("%d",  &x[i]);
+        }
+        min  =  x[1];
+        for  (i  =  0;  i  <  n;  i++)
+        if  (x[i]  <  min)
+                min  =  x[i];
+        printf("Cel  mai  mic  numar  al  tabloului  este:  %d",  min);
+}
+25. Scrieţi o aplicatie C/C++ care citeşte de la tastatură un şir de 10 valori intregi. Definiţi o funcţie care primeste şirul ca parametru şi apoi îl afişeaza ordonat crescător.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+void  sortare(int*  x);
+int  main(void)
+{
+        int  i,  n,  x[10];
+        printf("\nDati  dimensiunea  tabloului:");
+        scanf("%d",  &n);
+        if  (n  >  10)
+        {
+                printf("\nDimensiunea  este  invalida!\n");
+        }
+        printf("\tDati  elementele  tabloului:\n");
+        for  (i  =  0;  i  <  n;  i++)
+        {
+                printf("\tx[%d]=  ",  i);
+                scanf("%d",  &x[i]);
+        }
+        
+        printf("Sirul  sortat  este:"); 
+        sortare(x);
+}
+        void  sortare(int*  x)
+        {
+                int  aux,  i,  sortat;
+                do
+                {
+                        sortat  =  0;
+                        for  (i  =  0;  i  <  9;  i++)
+                                if  (*(x  +  i)  >  *  (x  +  i  +  1))
+                                {
+                                        aux  =  *(x  +  i);
+                                        *(x+  i)  =  *(x  +  i  +  1);
+                                        *(x  +  i  +  1)  =  aux;
+                                        sortat  =  1;
+                                }
+                }  while  (sortat  !=  0);
+                for  (i  =  0;  i  <=  9;  i++)
+                        printf("%d  ",  *(x  +  i));
+        }
+26. Scrieţi o aplicaţie C/C++ care defineşte o parolă (in format şir de caractere). Programul citeşte în mod repetat şirurile de caractere introduse de la tastatură, până când utilizatorul scrie parola corectă. Să se afişeze numărul de incercări până la introducerea parolei corecte.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+void  main(void)
+{
+        char  s[200],  a[]  =  "parola";
+        int  i,  j  =  0;
+        printf("Introduceti  parola:");
+        scanf("%c",  &s);
+        i  =  strcmp(s,  a);
+        if  (i  !=  0)
+        {
+                printf("\nAti  introdus  o  parola  gresita!  Incercati  din  nou!  ");
+                j  =  1;
+                while  (i  !=  0)
+                {
+                        printf("\nIntroduceti  din  nou  parola:");
+                        scanf("%c",  &s);
+                        i  =  strcmp(s,  a);
+                        if  (i  !=  0)
+                        {
+                                printf("\n  Ati  introdus  o  parola  gresita!  Incercati  din  nou!");
+                                j++;
+                        }
+                        else
+                                printf("Parola  corecta!");
+                }
+        }
+
+
+27. Să se scrie un program C/C++ care citeşte elementele a doua tablouri unidimensionale de numere întregi şi afişează produsul scalar al acestora. Se va folosi o functie care preia elementele de la tastatură şi o altă funcţie, care calculează produsul scalar. Ambele vor utiliza pointeri. Citirea numărului de elemente ale tabloului şi afişarea rezultatului se va face în funcţia main().
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<iostream>
+using  namespace  std;
+#define  TAB  100
+void  citire(int  *v,  int  n);
+int  prodScalar(int*  x,  int*  y,  int  n);
+
+int  main(void)
+{
+        int  x[TAB],  y[TAB],  n;
+        printf("Dati  dimensiunea  tablourilor:");
+        scanf("%d",  &n);
+        if  (n  >  TAB)  {
+                printf("Dimensiunea  este  invalida:");
+        }
+        
+        printf("Dati  elementele  primului  tablou:\n");
+        citire(x,  n);
+        printf("Dati  elementele  celui  de-al  doilea  tablou:\n");
+        citire(y,  n);
+        cout  <<  "\n\nProdusul  scalar  al  celor  doi  vectori  este:  "  <<  prodScalar(x,  y,  n)  <<  endl;
+}
+
+void  citire(int  *v,  int  n)
+{
+        int  i;
+        for  (i  =  0;  i  <  n;  i++)
+        {
+                
+                cout  <<  "\tElementul  "  <<  i  +  1  <<  ":  ";
+                cin  >>  *(v  +  i);
+                
+        }
+}
+int  prodScalar(int*  x,  int*  y,  int  n)
+{
+        int  i,  s  =  0;
+        for  (i  =  0;  i  <  n;  i++)
+                s  +=  *(x  +  i)  *  *(y  +  i);
+        return  s;
+}
+
+28.Să se scrie un program care citeşte de la tastatură două şiruri de caractere şi afişează numărul de caractere prin care ele diferă (adică numărul de caractere care există în primul şi nu există în al doilea + numărul de caractere care există în al doilea şi nu există în primul). Folosiţi pointeri pentru accesul la elementele tablourilor.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#define  SIR  150
+int  main(void)
+{
+        char  x[SIR],  y[SIR],  *a  =  x,  *b  =  y;
+        int  X[SIR],  Y[SIR],  i,  s  =  0;
+        printf("Introduceti  primul  sir:  ");
+        scanf("%s",  a);
+        printf("Al  doilea  sir:  ");
+        scanf("%s",  b);
+        for  (i  =  0;  i  <  149;  i++)
+        {
+                X[i]  =  0;
+                Y[i]  =  0;
+        }
+        i  =  0;
+        while  (*(a  +  i))
+        {
+                X[*(a  +  (i++))]  =  1;
+        }
+        i  =  0;
+        while  (*(b  +  i))
+                Y[*(b  +  (i++))]  =  1;
+        for  (i  =  0;  i  <  149;  i++)
+                if  (X[i]  &&Y[i])
+                {
+                        X[i]  =  0;
+                        Y[i]  =  0;
+                }
+        for  (i  =  0;  i  <  149;  i++)
+        {
+                if  (X[i])
+                        s++;
+                if  (Y[i])
+                        s++;
+        }
+        printf("Numarul  de  caractere  care  difera  in  cele  doua  siruri  este:  %d",  s);
+}
+
+29.Să se scrie un program care citeşte n numere reale, pe care le stochează într-un tablou alocat dinamic, afişează suma elementelor negative citite, iar la sfârşit eliberează zona de memorie alocată.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<malloc.h>
+int  main(void)
+{
+        int  i,  n,  *  tab,neg=0;
+        printf("\nIntroduceti  dimensiunea  tablolului:  ");
+        scanf("%d",  &n);
+        if  (tab  =  (int*)malloc(n  *  sizeof(int)))
+        {
+                printf("\nIntroduceti  elementele  tablolului:  \n");
+                for  (i  =  0;  i  <  n;  i++)
+                {
+                        printf("\t  elementul  %d:  ",  i);
+                        scanf("%d",  tab  +  i);
+                        if  (*(tab  +  i)  <  0)
+
+                                neg  =  neg  +  *(tab  +  i);
+                }
+
+                printf("%d",  neg);
+        }
+        
+      if  (tab)
+              free(tab);
+      }
+
+30. Să se scrie o aplicaţie C/C++, care alocă dinamic memorie pentru stocarea elementelor a două matrici de "m" linii şi "n" coloane. Să se scrie o funcţie care calculează suma celor două matrici şi o funcţie pentru afişarea unei matrici. Să se afişeze matricile iniţiale şi matricea obţinută.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#include  <stdlib.h>
+
+
+        void  cit_mat(int*,  int,  int);
+        void  afis_mat(int*,  int,  int);
+        void  suma_mat(int*,  int*,int*,int,int);
+        int  main(void)  {
+                int*  tab1,*tab2,  m,  n,  *suma;
+                
+                printf("\n  Introduceti  m  si  n,  nr.  linii  si  col.:  ");
+                
+                scanf("%d%d",  &m,  &n);
+                
+                if  ((m  <=  0)  ||  (n  <=  0))  {
+                        printf("\nNumere  invalide!\tMai  incearcati!");
+                        
+                        return  1;
+                }
+                
+                tab1  =  (int*)malloc(m  *  n  *  sizeof(int));
+                tab2  =  (int*)malloc(m  *  n  *  sizeof(int));
+                suma  =  (int*)malloc(m  *  n  *  sizeof(int));
+                
+                if  (tab1  ==  0  ||  tab2  ==  0)  {
+                        
+                        printf("\n  Eroare  de  alocare  !");
+                        return  1;
+                }
+                printf("\nIntroduceti  elementele  primei  matrice  %dx%d  :",  m,  n);
+                cit_mat(tab1,  m,  n);
+                printf("\nIntroduceti  elementele  celei  de-a  doua  matrice  %dx%d  :",  m,  n);
+                cit_mat(tab2,  m,  n);
+                printf("\nMatricea  1    arata  astfel:");
+                
+                afis_mat(tab1,  m,  n);
+                printf("\nMatricea  2    arata  astfel:");
+
+                afis_mat(tab2,  m,  n);
+
+                printf("\nSuma  matricelor  este:");
+                suma_mat(tab1,  tab2,  suma,  m,  n);
+                
+                
+                if  (tab1)  free(tab1);
+                if  (tab2)  free(tab2);
+                if  (suma)  free(suma);
+                
+
+
+}
+        void  cit_mat(int*  tb,  int  l,  int  c)  {
+                int  i,  j;
+                for  (i  =  0;  i  <  l;  i++)  {
+                        printf("\nLinia  %d:  ",  i);
+                        for  (j  =  0;  j  <  c;  j++)
+                        
+                                scanf("%d",  tb  +  i  *  c  +  j);
+                }
+        }
+        void  afis_mat(int*  tb,  int  l,  int  c)  {
+                int  i,  j;
+                for  (i  =  0;  i  <  l;  i++)  {
+                        
+                        printf("\n\t");
+                        for  (j  =  0;  j  <  c;  j++)
+                                
+                                printf("%d  ",  *(tb  +  i  *  c  +  j));
+                }
+                
+                printf("\n");
+        }
+        void  suma_mat(int*  tb1,  int*  tb2,int*  tb,int  l,int  c)
+        {
+                int  i,  j;
+                for  (i  =  0;  i  <l;  i++)
+                { 
+                        printf("\n\t");
+                        for  (j  =  0;  j  <  c;  j++)
+                        {
+                                *(tb  +  i  *  c  +  j)  =  *(tb1  +  i  *  c  +  j)  +  *(tb2  +  i  *  c  +  j);
+                                
+                                printf("%d  ",  *(tb  +  i  *  c  +  j));
+                        }
+                        
+                }
+                printf("\n");
+        }
+
+31. Să se scrie o aplicaţie C/C++ care alocă dinamic memorie pentru "n" şiruri de caractere, care se vor citi de la tastatură.
+
+#include<iostream>
+using  namespace  std;
+#include<stdlib.h>
+  int  main()
+{
+        int  n,  m,  i,  j;
+        char  *x=NULL;
+        cout  <<  "\n  Introduceti  numarul  de  siruri:";
+        cin  >>  n;
+        cout  <<  "\n  Introduceti  dimensiunea  sirului:";
+        cin  >>  m;
+        
+
+                for  (i  =  0;  i  <  n;  i++)
+                {
+                        x  =  (char*)malloc(m  *  sizeof(char));
+                        
+                        cout  <<  "\n  Introduceti  m  caractere";
+                        for  (j  =  0;  j  <  m;  j++)
+                        {
+                                cout  <<  "\n  a["  <<  j  <<  "]=  ";
+                                cin  >>  *(x  +j);
+                        }
+                        if  (x)
+                                free(x);
+                }
+                
+        }
+
+
+32.Să se scrie un program care citeşte şi apoi afişează date întregi preluate dintr-un fişier text al cărui nume este citit de la consolă. Creati in prealabil fisierul prin program.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+
+int  main(void)  {
+       
+                int  ch; 
+                FILE  *  fp;   
+                char  filename[50];
+                printf("Introduceti  numele  fisierului:  ");
+             
+                scanf("%s",  &filename);
+                fp  =  fopen(filename,  "r");
+       
+                if  (fp  ==  NULL)  {
+                       
+                                printf("Fisierul  nu  a  putut  fi  deschis\n");
+                       
+                                return  1;
+                       
+                }   
+                while  ((ch  =  fgetc(fp))  !=  EOF)  {                   
+                        printf("%c",  ch);
+                }
+                fclose(fp);
+             
+              return  0;
+       
+}
+
+33.Scrieţi un program C/C++ care citeşte de la tastatură un caracter apoi scrie acest caracter într-un fişier text pe n linii, câte n caractere pe fiecare linie, n citit de la consola.
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#include  <stdlib.h>
+        
+        int  main(void)
+        {
+                FILE*  fs;
+                char  c,  fileName[50];
+                int  n;
+                printf("Introduceti  caracterul:  ");
+                scanf("%c",&c);
+                printf("Introduceti  numarul  intreg:  ");
+                scanf("%d",  &n);
+                printf("Introduceti  numele  fisierului:  ");
+                scanf("%s",&fileName);
+                fs  =  fopen(fileName,  "w");
+                if  (fs  ==  NULL)
+                {
+                        printf("\nFisierul  nu  a  putut  fi  deschis\n");
+                        return  1;
+                }
+                for  (int  i  =  0;  i  <  n;  i++)
+                {
+                        fprintf(fs,  "  \n");
+                        
+
+                        for  (int  j  =  0;  j  <  n;  j++)
+                        {
+                                fprintf(fs,  "  %c",  c);
+                        }
+                        
+                }
+                
+                fclose(fs);
+        }
+
+
+
